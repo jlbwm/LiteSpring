@@ -5,10 +5,19 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="petStore"
-          class="xyz.litespring.service.v1.PetStoreService" >
+          class="xyz.litespring.service.v1.PetStoreService">
+
+
     </bean>
 
     <bean id="invalidBean"
           class="xxx.xxxxx" >
     </bean>
+
+    <bean id="petClinic"
+          class="xyz.litespring.service.v1.PetClinicService"
+          scope="prototype">
+    </bean>
+
+
 </beans>

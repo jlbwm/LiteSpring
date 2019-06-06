@@ -7,7 +7,7 @@ import xyz.litespring.beans.BeanDefinition;
  */
 public interface BeanFactory {
 
-    BeanDefinition getBeanDefinition(String beanID);
+//    BeanDefinition getBeanDefinition(String beanID);
 
     Object getBean(String beanID);
 }

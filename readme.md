@@ -1,38 +1,39 @@
 # Wheel Making 1 - Lite Spring
 
-TDD：思考-写测试用例 -> 运行，保证失败 -> 写just enough 的代码，让测试通过 -> 重构代码， 保持测试通过 -> 进入下一轮
+TDD: Think and write test case -> run, make sure run failure -> write just enough code, pass the test case -> refactoring code, keep the test case pase -> go to next loop 
 
 ## Version 1
 
-目标：实现基本的Bean Factory
-测试：给定一个xml配置文件（内含bean的定义），能够从中获取 POJO
+Target：Implement the basic bean factory
+Test case：Given a xml configuration file(include the bean defination), get the POJO from it.
 
-commit 1: 实现了基本的BeanFactory Class
+commit 1: Implemented the basic BeanFactory class
 
- - 创建BeanFactory接口，实现 getBeanDefinition， getBean方法
- - 创建BeanDefinition接口，实现 getClassName功能
- - 使用dom4j 实现loadBeanDefinition method, 遍历整个bean xml, 存入hash表中
+ - Created the BeanFactory interface, implemented getBeanDefinition() and getBean()
+ - Created the BeanDefinition interface, implemented getClassName()
+ - Used dom4j implemented loadBeanDefinition(), traversed the entire bean XML, and stored in hash table
  
- commit 2: 优化异常处理
+ commit 2: Improved the error handling
  
- - 创建BeansException
- - 创建继承BeansException的BeansCreationException, BeansDefinitionStoreException
+ - Created BeansException
+ - Crateed BeansCreationException, BeansDefinitionStoreException extened from BeansException
 
 ## Version 2
 
-目标：实现Basic BeanFactory并将其封装为ApplicationContext
+Target：Implement Basic BeanFactory and encapsulate it as ApplicationContext
 
-问题1：DefaultBeanFactory类中有多个职责。
-1. 读取XML文件形成BeanFactory的对象
-2. 通过反射的方式创建Bean的实例
+Issue 1：DefaultBeanFactory class has multiply responsibilities.
+1. Read XML file and format as object of BeanFactory
+2. Create Bean instance by reflect
 
-解决方案: 把XML解析职责抽取出来
+method: Extract the XML parse part
 
-问题2：BeanFactory和XMLBeanDefinitionReader均在内部底层，不希望暴露出来
+Issue 2：BeanFactory and XMLBeanDefinitionReader should all located at the bottom layer, and not visible for higher layer
 
-解决方案: 用ApplicationContext封装起来
+method: Use ApplicationContext to encapsulate them
 
-问题3: 增加Bean中scope的功能
-解决方案: 见类图
+Issue 3: Add the scope property in the Bean
+
+method: See the below UML diagram
 
 ![image](/support/img/litespring.png)

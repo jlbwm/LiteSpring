@@ -2,7 +2,7 @@
 
 TDD: Think and write test case -> run, make sure run failure -> write just enough code, pass the test case -> refactoring code, keep the test case pase -> go to next loop 
 
-## Version 1
+## Version 1.1
 
 Target：Implement the basic bean factory
 Test case：Given a xml configuration file(include the bean defination), get the POJO from it.
@@ -18,7 +18,7 @@ commit 1: Implemented the basic BeanFactory class
  - Created BeansException
  - Crateed BeansCreationException, BeansDefinitionStoreException extened from BeansException
 
-## Version 2
+## Version 1.2
 
 Target：Implement Basic BeanFactory and encapsulate it as ApplicationContext
 
